@@ -73,8 +73,8 @@ db.pedidos.updateOne({ "_id": ObjectId("64407fb889917b0a95d9cce9") },{ $unset: {
 
 
 ## $lt y $lte
-```
 Primero insertamos los registros:
+```
 db.clientes.insertMany([
 {
   nombres: "Julian",
@@ -107,7 +107,9 @@ db.clientes.insertMany([
   edad: 47
 }
 ])
+```
 Luego ejecutamos la query
+```
 db.clientes.find({edad: {$lt: 28}})
 db.clientes.find({edad: {$lte: 28}})
 ```

@@ -46,8 +46,9 @@ db.pedidos.updateOne({ "_id": ObjectId("643df9c389917b0a95d9cce7") }, { "$pull":
 
 ## $pop
 ```
-db.pedidos.updateOne({ "_id": ObjectId("643df9c389917b0a95d9cce7") }, { $pop: { productos: 1 } } }) -> eliminará el último registro
-db.pedidos.updateOne({ "_id": ObjectId("643df9c389917b0a95d9cce7") }, { $pop: { productos: -1 } } }) -> eliminará el primer registro
+db.pedidos.updateOne({ "_id": ObjectId("64407fb889917b0a95d9cce9") }, { "$pop": { "productos": 1 } } ) -> eliminará el último registro
+db.pedidos.updateOne({ "_id": ObjectId("64407fb889917b0a95d9cce9") }, { "$pop": { "productos": -1 } } ) -> eliminará el primer registro
+
 ```
 
 ## $unset

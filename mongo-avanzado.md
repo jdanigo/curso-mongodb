@@ -71,3 +71,43 @@ db.pedidos.updateOne({ "_id": ObjectId("64407fb889917b0a95d9cce9") },{ $unset: {
 |$nin| diferente en la lista|
 |$regex|coincide con una expresión regular|
 
+
+## $lt y $lte
+```
+Primero insertamos los registros:
+db.clientes.insertMany([
+{
+  nombres: "Julian",
+  apellidos: "Sanchez"  ,
+  telefono: "3122898647", 
+  edad: 40  
+},
+{
+  nombres: "Jorge",
+  apellidos: "Rueda",
+  telefono: "3122898647",
+  edad: 20  
+},
+{
+  nombres: "Stiven",
+  apellidos: "Ortiz",
+  telefono: "3122898647",
+  edad: 28  
+},
+{
+  nombres: "Esteban",
+  apellidos: "Dido",
+  telefono: "3122898647",
+  edad: 46  
+},
+{
+  nombres: "Luis",
+  apellidos: "Fuentes",
+  telefono: "3122898647",
+  edad: 47
+}
+])
+Luego ejecutamos la query
+db.clientes.find({edad: {$lt: 28}})
+db.clientes.find({edad: {$lte: 28}})
+```

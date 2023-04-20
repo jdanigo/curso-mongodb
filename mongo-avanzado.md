@@ -113,3 +113,35 @@ Luego ejecutamos la query
 db.clientes.find({edad: {$lt: 28}})
 db.clientes.find({edad: {$lte: 28}})
 ```
+
+# Transacciones en mongo
+
+```
+var session = db.getMongo().startSession();
+session.startTransaction({ readConcern: { level: 'snapshot'}, writeConcern: { w: 'majority' } });
+ 
+
+try{
+
+    var cliente = db.cuentas.findOne({ _id: ObjectId("64408b6889917b0a95d9ccf1") });
+    var initialBalance = cliente.balance; 
+    var updatedBalance = initialBalance + 100; 
+    db.cuentas.updateOne( { _id: ObjectId("64408b6889917b0a95d9ccf1") }, { $set: {balance: updatedBalance } })
+
+    var cliente2 = db.cuentas.findOne({ _id: ObjectId("64408b6889917b0a95d9ccf2") });
+    var initialBalance2 = cliente2.balance; 
+    var updatedBalance2 = initialBalance2 + 1000; 
+    db.cuentas.updateOne( { _id: ObjectId("64408b6889917b0a95d9ccf2") }, { $set: {balance: updatedBalance2 } })
+
+    session.commitTransaction(); 
+    print("ok");
+    db.cuentas.find({})    
+}
+catch (error){
+    print("se presento un error", error);
+    session.abortTransaction(); 
+}
+finally{
+    session.endSession();
+}
+```

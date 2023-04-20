@@ -53,7 +53,8 @@ db.pedidos.updateOne({ "_id": ObjectId("64407fb889917b0a95d9cce9") }, { "$pop": 
 
 ## $unset
 ```
-db.pedidos.updateOne({ "_id": ObjectId("643df9c389917b0a95d9cce7") }, { $unset: { productos: {nombre: '' } } })
+db.pedidos.updateOne({ "_id": ObjectId("64407fb889917b0a95d9cce9") },{ $unset: { "productos.$[].precio" : "" } } ) -> eliminar el campo dentro de un subdocumento
+db.pedidos.updateOne({ "_id": ObjectId("64407fb889917b0a95d9cce9") },{ $unset: { "productos" : "" } } ) -> eliminar el campo completo de un documento
 ```
 
 ## Operadores de consulta

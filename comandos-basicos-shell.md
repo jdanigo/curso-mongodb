@@ -24,6 +24,11 @@ db.dropDatabase()
 ```
 db.createCollection('personas')
 ```
+## Borrar una colección de datos
+```
+db.nombreColeccion.drop()
+```
+
 ## Mostrar las colecciones de datos
 ```
 show collections

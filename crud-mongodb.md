@@ -164,3 +164,9 @@ db.personas.update({ nombre: 'Daniel' },
 ```
 db.personas.remove({ nombre: 'Daniel' })
 ```
+
+## Eliminar todos los registros
+
+```
+db.personas.deleteMany({})
+```

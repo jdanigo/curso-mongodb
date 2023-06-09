@@ -6,11 +6,12 @@ Supongamos que tenemos una colección de pedidos, donde nos llegan los pedidos d
 db.pedidos.insertOne({
   cliente: {
     nombre: "Juan Perez",
-    email: "juanperez@example.com"
+    email: "juanperez@example.com",
+    direccion: "mz2 cs 1"
   },
   productos: [
-    { nombre: "iPhone", precio: 1000 },
-    { nombre: "iPad", precio: 800 }
+    { _id: ObjectId(), nombre: "iPhone", precio : 1000 , categoria : "celulares" },
+    { _id: ObjectId(),nombre: "iPad", precio : 800, categoria : "tablets" }
   ]
 })
 ```

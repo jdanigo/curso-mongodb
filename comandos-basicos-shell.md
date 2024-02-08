@@ -16,7 +16,7 @@ db
 use testdatabase
 ```
 
-## Borrar base de datos
+## Borrar base de datos - borra la base de datos actual, sobre la que esté usando
 ```
 db.dropDatabase()
 ```

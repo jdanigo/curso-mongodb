@@ -18,7 +18,7 @@ db.personas.insert({
 ## Insertar multiples registros
 
 ```
-db.posts.insertMany([
+db.personas.insertMany([
   {
   nombres: 'Daniel',
   apellidos: 'Garces',

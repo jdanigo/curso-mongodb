@@ -115,3 +115,22 @@ db.clientes.find({edad: {$lt: 28}})
 db.clientes.find({edad: {$lte: 28}})
 
 ```
+
+## Agregadores (Agregations)
+Son un conjunto de operaciones que se utilizan para procesar datos y devolver resultados calculados. Estas operaciones permiten transformar o manipular datos, podemos hacer filtrados, agrupaciones y/o diferentes cálculos.
+Se le conoce que tiene un enfoque de canalización o pipeline, que consiste en una serie de etapas que se aplican secuencialmente a los documentos. a estas etapas se les conoce como un pipeline, donde se realiza una operación específica.
+
+### Operaciones comunes
+
+|Operacion|Definicion
+|-------|----------|
+|$match| Filtrar los documentos que coincidan con el criterio de búsqueda|
+|$group| Agrupa los documentos según un campo específico|
+|$project| Permite especificar que campos deben incluirse o excluirse del resultado final|
+|$sort| Ordena los resultados en orden ascendente o descendente según el criterio|
+|$limit| Limita el número de resultados devueltos de la consulta total.|
+|$skip| Saltear la cantidad de registros, con el fin de poder hacer una paginación|
+|$unwind| Se utiliza para deshacer un campo de matriz o deshacer una lista, generando un documento nuevo para cada elemento de la matriz|
+|$lookup| Realiza operaciones de unión es muy similar a una operación JOIN en SQL|
+|$geoNear|Encuentra documentos cerca de una ubicación geoespacial. |
+
